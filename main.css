@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+background-color: orange;
+}
+.numberViewer{
+  margin: 0 auto;
+  width: 328px;
+  /*width: 22.6%*/
+  height: 406px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
+}
+
+.calc-btn{
+  background-color: #64B255;
+  height: 20%;
+  margin: 0px;
+  flex: 1 1 25%;
+  border: 0.5px solid #91C988;
+  color: #91C988;
+  font-size: 55px;
+  text-align: center;
+  line-height: 20%;
+  padding-top: 34px;
+
+}
+
+#viewport{
+  flex: 1 1 75%;
+  text-align: right;
+}
