@@ -1,7 +1,9 @@
-var allOperators = document.querySelectorAll('.operator');
-for (var i = 0; i < allOperators.length; i++) {
 
 
-var operatorTextNode = allOperators[i].children;
-console.log(operatorTextNode);
+var operands = ["*", "/", "-", "+"];
+runningTotal = 20;
+y = 2;
+if (operands[1] == '/') {
+  runningTotal = runningTotal / y;
+  console.log(runningTotal);
 }
