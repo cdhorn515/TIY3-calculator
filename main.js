@@ -38,6 +38,12 @@ var operatorObj = {
  //clear = clearNumbers();
 }
 
+// DOM elements
+//get all calc buttons
+var clearNode = document.querySelectorAll('.calc-btn');
+
+
+
 sumTotal = "5" + operatorObj.minus + "1"
 
 console.log(sumTotal);
