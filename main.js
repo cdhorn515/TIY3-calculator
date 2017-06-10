@@ -1,29 +1,33 @@
 // "use strict";
-  //
-  //
-  // function displayNumber(num){
-  //   for (var i = 0; i < numberStorageNode.length; i++) {
-  //    if (numToDisplay === numberStorageNode[i]) {
-  //       viewportNode = numToDisplay;
-  //       console.log(numToDisplay);
-  //     }
-  //   }
-  // }
+
+
+
 var calculatorNode = document.getElementById('calculator');
+var operatorTextNode = document.querySelectorAll('.text');
 var allNumbers = document.querySelectorAll('.num');
 //returns an array, loop through the array
   for (var i = 0; i < allNumbers.length; i++) {
     var numberStorageNode = allNumbers[i];
     numberStorageNode.setAttribute('value', numberStorageNode.attributes[1].value);
-    console.log('here', numberStorageNode);
+    console.log('numberStorageNode' + [i] + " value= ", numberStorageNode.attributes[1].value);
+    //returns value of each numberStorageNode
     // calculatorNode.appendChild(numberStorageNode);
   }
 
+var allOperators = document.querySelectorAll('.operator');
+var operatorTextNode = allOperators.querySelectorAll('.text');
+console.log(operatorTextNode);
 
-
-var operatorNode = document.querySelectorAll('.operator');
 // drill down inside of array
 // console.log(allNumbers[0].attributes[1].value);
+for (var i = 0; i < allOperators.length; i++) {
+  var operatorNode = allOperators[i];
+  operatorNode.setAttribute('value', operatorNode.attributes[1].value);
+  // console.log(operatorNode.attributes[1].value);
+  // console.log('operatorNode' + [i] + ' value= ', operatorNode.attributes[1].value);
+  console.log(operatorTextNode);
+}
+
 var clearNode = document.getElementById('clear');
 // calculatorNode.appendChild(clearNode);
 var displayNode = document.getElementById('viewport');
@@ -33,25 +37,21 @@ var equalNode = document.getElementById('equal');
 var decimalNode = document.getElementById('decimal');
 numberStorageNode.addEventListener('click', displayNumber);
 
-function displayNumber() {
-  displayNode.textContent = numberStorageNode.attributes.value;
+// function displayNumber() {
+//   displayNode.appendChild(numberStorageNode.attributes.value)
+//   // displayNode.textContent = numberStorageNode.attributes.value;
+//   return displayNode;
+// }
+
+function displayNumber(num){
+  for (var i = 0; i < numberStorageNode.length; i++) {
+   if (num == numberStorageNode[i].attributes.value) {
+      console.log('here', num, numberStorageNode[i]);
+    }
+  }
 }
 
 
-// for (var i = 0; i < numberStorageNode.length; i++) {
-//       calculatorNode.appendChild(numberStorageNode[i]);
-//
-//     }   console.log(numberStorageNode);
-
-
-//
-//
-//   var operatorNode = document.getElementsByClassName('.operator');
-//
-//   console.log(numberStorageNode);
-//   console.log(operatorNode);
-//
-//
 //   // var viewportNode = document.getElementById('viewport');
 //   //
 //   // var numToDisplay = numberStorageNode.addEventListener('click', displayNumber)
@@ -84,22 +84,6 @@ function displayNumber() {
 // var doMath = '9';
 // var sumTotal = 0;
 
-// var operatorObj = {
-//  plus: '+',
-//  minus:'-',
-//  multiply: '*',
-//  divide: '/',
-//  equal: '=',
-//  decimal: '.'
-//  //clear = clearNumbers();
-// }
 
 // DOM elements
 //get all num buttons--returns an array with div, id, and class names array returns order of [7,8,9,4,5,6,1,2,3,0]
-
-
-
-
-
-// sumTotal = "5" + operatorObj.minus + "1"
-//
