@@ -39,21 +39,25 @@ function doTheMath(number, operator){
   }
 //div with class of operator, returns an array (includes childNode, but need operatorTextNode to access symbol)
 var allOperators = document.querySelectorAll('.operator');
-for (var i = 0; i < allOperators.length; i++) {
-  var operatorStore = allOperators[i];
-  operatorStore = document.getElementById('divide');
-  allOperators.appendChild(operatorStore);
-  operatorStore = document.getElementById('multiply');
-  allOperators.appendChild(operatorStore);
-  operatorStore = document.getElementById('minus');
-  allOperators.appendChild(operatorStore);
-  operatorStore = document.getElementById('plus');
-  allOperators.appendChild(operatorStore);
-}
+// for (var i = 0; i < allOperators.length; i++) {
+  // var operatorStore = allOperators[i];
+  divideNode = document.getElementById('divide');
+  divideNode.addEventListener("click", function(){alert("it works! you clicked on the /  operator")});
+  // allOperators.appendChild(operatorStore);
+  multiplyNode = document.getElementById('multiply');
+  multiplyNode.addEventListener("click", function(){alert("it works! you clicked on the *  operator")});
+  // allOperators.appendChild(operatorStore);
+  minusNode = document.getElementById('minus');
+  minusNode.addEventListener("click", function(){alert("it works! you clicked on the + operator")});
+  // allOperators.appendChild(operatorStore);
+  plusNode = document.getElementById('plus');
+  plusNode.addEventListener("click", function(){alert("it works! you clicked on the +  operator")});
+  // allOperators.appendChild(operatorStore);
+
 //child of calc-btn, 4 operands (+-*/)
 var operatorTextNode = document.querySelectorAll('.black-txt');
 
-operatorStore.addEventListener("click", function(){alert("it works! you clicked on an operator")});
+// operatorStore.addEventListener("click", function(){alert("it works! you clicked on an operator")});
 
 
 // print symbol to console
