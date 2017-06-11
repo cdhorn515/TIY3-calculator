@@ -55,7 +55,7 @@ var allOperators = document.querySelectorAll('.operator');
 var divideNode = document.getElementById('divide');
 divideNode.addEventListener("click", function() {
   displayNode.textContent = runningTotal + '/';
-  displayNode.textContent = displayNode.textContent + '/';
+  // displayNode.textContent = displayNode.textContent + '/';
   runningTotal = runningTotal + " " + operatorTextNode[0].childNodes[0].data + " ";
   console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[0].childNodes[0].data + " operator")
