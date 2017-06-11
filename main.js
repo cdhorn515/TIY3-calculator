@@ -13,21 +13,29 @@ var calculatorNode = document.getElementById('calculator');
 var displayNode = document.getElementById('display');
 //set style for display so numbers added will show correct size and place
 displayNode.setAttribute('style', 'fontFamily: Helvetica, sans-serif; fontWeight: lighter; fontSize: 55px; textAlign: right;');
+
 var clearNode = document.getElementById('clear');
 clearNode.addEventListener("click", function(){
   runningTotal = "";
   displayNode.textContent = "0";
   console.log('runningTotal is now ' + runningTotal);
   alert("it works! You clicked the " + clearNode.attributes[1].nodeValue + " button")});
+
 var equalNode = document.getElementById('equal');
 equalNode.addEventListener("click", function(){
   var totalArray = runningTotal.split(' ');
   console.log(totalArray);
   alert("it works! You clicked the " + equalNode.attributes[1].nodeValue +  " sign")});
-var decimalNode = document.getElementById('decimal');
+
+var decimalNode = document.getElementById('.');
 //include in function to turn off eventListener
 decimalNode.addEventListener("click",
- function(){alert("it works! You clicked the " + decimalNode.attributes[1].nodeValue + " symbol")});
+ function(){
+   //returns undefined.
+  //  var runningTotal = runningTotal + decimalNode.attributes[1].nodeValue;
+   runningTotal = runningTotal + '.';
+   console.log(runningTotal);
+   alert("it works! You clicked the " + decimalNode.attributes[1].nodeValue + " symbol")});
 
 var allNumbers = document.querySelectorAll('.num');
 
