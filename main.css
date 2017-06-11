@@ -54,4 +54,16 @@ background-color: orange;
 .light-grn, .black-txt{
   background-color: #82C276;
   color: #4F7947;
+  font-size: 42px;
+  padding-top: 10px;
+}
+
+.changeBackground:hover{
+  color: #FFF;
+  background-color: #82C276;
+}
+
+.changeTxt:hover{
+  color: #FFF;
+  /*color: #91C988;*/
 }
