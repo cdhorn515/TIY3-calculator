@@ -29,7 +29,8 @@ var allOperators = document.querySelectorAll('.operator');
 // for (var i = 0; i < allOperators.length; i++) {
   // var operatorStore = allOperators[i];
 var divideNode = document.getElementById('divide');
-divideNode.addEventListener("click", function(){alert("it works! you clicked on the " + operatorTextNode[0].childNodes[0].data + " operator")});
+divideNode.addEventListener("click", function(){
+  alert("it works! you clicked on the " + operatorTextNode[0].childNodes[0].data + " operator")});
   // allOperators.appendChild(operatorStore);
 var multiplyNode = document.getElementById('multiply');
  multiplyNode.addEventListener("click", function(){alert("it works! you clicked on the " + operatorTextNode[1].childNodes[0].data + " operator")});
@@ -42,25 +43,46 @@ var plusNode = document.getElementById('plus');
   // allOperators.appendChild(operatorStore);
 
   var zeroNode = document.getElementById('0');
-  zeroNode.addEventListener("click",  function(){alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)});
+  zeroNode.addEventListener("click", function(){
+    displayNode.textContent = "0";
+    alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)});
   var oneNode = document.getElementById('1');
-  oneNode.addEventListener("click",  function(){alert("it works! you clicked number " + oneNode.attributes[1].nodeValue)});
+  oneNode.addEventListener("click", function(){
+    displayNode.textContent = "1";
+    alert("it works! you clicked number " + oneNode.attributes[1].nodeValue)});
   var twoNode = document.getElementById('2');
-  twoNode.addEventListener("click",  function(){alert("it works! you clicked number " + twoNode.attributes[1].nodeValue)});
+  twoNode.addEventListener("click", function(){
+    displayNode.textContent = "2";
+    alert("it works! you clicked number " + twoNode.attributes[1].nodeValue)});
   var threeNode = document.getElementById('3');
-  threeNode.addEventListener("click",  function(){alert("it works! you clicked number " + threeNode.attributes[1].nodeValue)});
+  threeNode.addEventListener("click", function(){
+    displayNode.textContent = "3";
+    alert("it works! you clicked number " + threeNode.attributes[1].nodeValue)});
   var fourNode = document.getElementById('4');
-  fourNode.addEventListener("click",  function(){alert("it works! you clicked number " + fourNode.attributes[1].nodeValue)});
+  fourNode.addEventListener("click", function(){
+    displayNode.textContent = "4";
+    alert("it works! you clicked number " + fourNode.attributes[1].nodeValue)});
   var fiveNode = document.getElementById('5');
-  fiveNode.addEventListener("click", displayNumber);
+  // fiveNode.addEventListener("click", displayNumber);
+  fiveNode.addEventListener("click", function(){
+    displayNode.textContent = "5";
+    alert("it works! you clicked number " + fiveNode.attributes[1].nodeValue)});
   var sixNode = document.getElementById('6');
-  sixNode.addEventListener("click",  function(){alert("it works! you clicked number " + sixNode.attributes[1].nodeValue)});
+  sixNode.addEventListener("click", function(){
+    displayNode.textContent = "6";
+    alert("it works! you clicked number " + sixNode.attributes[1].nodeValue)});
   var sevenNode = document.getElementById('7');
-  sevenNode.addEventListener("click",  function(){alert("it works! you clicked number " + sevenNode.attributes[1].nodeValue)});
+  sevenNode.addEventListener("click", function(){
+    displayNode.textContent = "7";
+    alert("it works! you clicked number " + sevenNode.attributes[1].nodeValue)});
   var eightNode = document.getElementById('8');
-  eightNode.addEventListener("click",  function(){alert("it works! you clicked number " + eightNode.attributes[1].nodeValue)});
+  eightNode.addEventListener("click", function(){
+    displayNode.textContent = "8";
+    alert("it works! you clicked number " + eightNode.attributes[1].nodeValue)});
   var nineNode = document.getElementById('9');
-  nineNode.addEventListener("click",  function(){alert("it works! you clicked number " + nineNode.attributes[1].nodeValue)});
+  nineNode.addEventListener("click", function(){
+    displayNode.textContent = "9";
+    alert("it works! you clicked number " + nineNode.attributes[1].nodeValue)});
 
 
 //child of calc-btn, 4 operands (+-*/)
