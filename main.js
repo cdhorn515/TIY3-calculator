@@ -25,7 +25,7 @@ clearNode.addEventListener("click", function() {
 });
 
 var equalNode = document.getElementById('equal');
-
+//add click even to equal, sum up numbers when clicked
 equalNode.addEventListener("click", sumOfNumbers);
 
 
@@ -41,6 +41,7 @@ decimalNode.addEventListener("click",
     //returns undefined.
     //  var runningTotal = runningTotal + decimalNode.attributes[1].nodeValue;
     runningTotal = runningTotal + '.';
+    displayNode.textContent = displayNode.textContent + '.';
     console.log(runningTotal);
     // alert("it works! You clicked the " + decimalNode.attributes[1].nodeValue + " symbol")
   });
@@ -53,6 +54,8 @@ var allOperators = document.querySelectorAll('.operator');
 // var operatorStore = allOperators[i];
 var divideNode = document.getElementById('divide');
 divideNode.addEventListener("click", function() {
+  displayNode.textContent = runningTotal + '/';
+  displayNode.textContent = displayNode.textContent + '/';
   runningTotal = runningTotal + " " + operatorTextNode[0].childNodes[0].data + " ";
   console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[0].childNodes[0].data + " operator")
@@ -60,6 +63,7 @@ divideNode.addEventListener("click", function() {
 // allOperators.appendChild(operatorStore);
 var multiplyNode = document.getElementById('multiply');
 multiplyNode.addEventListener("click", function() {
+  displayNode.textContent = runningTotal + '*';
   runningTotal = runningTotal + " " + operatorTextNode[1].childNodes[0].data + " ";
   console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[1].childNodes[0].data + " operator")
@@ -67,6 +71,7 @@ multiplyNode.addEventListener("click", function() {
 // allOperators.appendChild(operatorStore);
 var minusNode = document.getElementById('minus');
 minusNode.addEventListener("click", function() {
+  displayNode.textContent = runningTotal + '-';
   runningTotal = runningTotal + " " + operatorTextNode[2].childNodes[0].data + " ";
   console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[2].childNodes[0].data + " operator")
@@ -74,6 +79,7 @@ minusNode.addEventListener("click", function() {
 // allOperators.appendChild(operatorStore);
 var plusNode = document.getElementById('plus');
 plusNode.addEventListener("click", function() {
+  displayNode.textContent = runningTotal + '+';
   runningTotal = runningTotal + " " + operatorTextNode[3].childNodes[0].data + " ";
   console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[3].childNodes[0].data + " operator")
@@ -83,35 +89,37 @@ plusNode.addEventListener("click", function() {
 var zeroNode = document.getElementById('0');
 zeroNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "0";
-  runningTotal = runningTotal + displayNode.textContent;
+  // runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + zeroNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)
 });
 var oneNode = document.getElementById('1');
 oneNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "1";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + oneNode.attributes[1].nodeValue;
+  // runningTotal = runningTotal + displayNode.textContent;
   console.log(runningTotal);
   // alert("it works! you clicked number " + oneNode.attributes[1].nodeValue)
 });
 var twoNode = document.getElementById('2');
 twoNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "2";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + twoNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + twoNode.attributes[1].nodeValue)
 });
 var threeNode = document.getElementById('3');
 threeNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "3";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + threeNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + threeNode.attributes[1].nodeValue)
 });
 var fourNode = document.getElementById('4');
 fourNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "4";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + fourNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + fourNode.attributes[1].nodeValue)
 });
@@ -119,35 +127,35 @@ var fiveNode = document.getElementById('5');
 // fiveNode.addEventListener("click", displayNumber);
 fiveNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "5";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + fiveNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + fiveNode.attributes[1].nodeValue)
 });
 var sixNode = document.getElementById('6');
 sixNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "6";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + sixNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + sixNode.attributes[1].nodeValue)
 });
 var sevenNode = document.getElementById('7');
 sevenNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "7";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + sevenNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + sevenNode.attributes[1].nodeValue)
 });
 var eightNode = document.getElementById('8');
 eightNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "8";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + eightNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + eightNode.attributes[1].nodeValue)
 });
 var nineNode = document.getElementById('9');
 nineNode.addEventListener("click", function() {
   displayNode.textContent = displayNode.textContent + "9";
-  runningTotal = runningTotal + displayNode.textContent;
+  runningTotal = runningTotal + nineNode.attributes[1].nodeValue;
   console.log(runningTotal);
   // alert("it works! you clicked number " + nineNode.attributes[1].nodeValue)
 });
@@ -175,8 +183,8 @@ function sumOfNumbers() {
        sumTotal = sumTotal + parseFloat(totalArray[i+1]);
        console.log(sumTotal);
      }
-    }
-    alert("it works! You clicked the " + equalNode.attributes[1].nodeValue + " sign");
+   } displayNode.textContent = sumTotal;
+    // alert("it works! You clicked the " + equalNode.attributes[1].nodeValue + " sign");
   }
 
 
