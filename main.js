@@ -1,6 +1,6 @@
 // "use strict";
 
-var runningTotal = "5+";
+var runningTotal = "";
 
 function total(){
   return runningTotal = runningTotal + displayNode.textContent;
@@ -17,10 +17,13 @@ var clearNode = document.getElementById('clear');
 clearNode.addEventListener("click", function(){
   runningTotal = "";
   displayNode.textContent = "0";
-  console.log(runningTotal);
+  console.log('runningTotal is now ' + runningTotal);
   alert("it works! You clicked the " + clearNode.attributes[1].nodeValue + " button")});
 var equalNode = document.getElementById('equal');
-equalNode.addEventListener("click", function(){alert("it works! You clicked the " + equalNode.attributes[1].nodeValue +  " sign")});
+equalNode.addEventListener("click", function(){
+  var totalArray = runningTotal.split(' ');
+  console.log(totalArray);
+  alert("it works! You clicked the " + equalNode.attributes[1].nodeValue +  " sign")});
 var decimalNode = document.getElementById('decimal');
 //include in function to turn off eventListener
 decimalNode.addEventListener("click",
@@ -34,17 +37,25 @@ var allOperators = document.querySelectorAll('.operator');
   // var operatorStore = allOperators[i];
 var divideNode = document.getElementById('divide');
 divideNode.addEventListener("click", function(){
+  runningTotal = runningTotal + " " + operatorTextNode[0].childNodes[0].data + " ";
+  console.log(runningTotal);
   alert("it works! you clicked on the " + operatorTextNode[0].childNodes[0].data + " operator")});
   // allOperators.appendChild(operatorStore);
 var multiplyNode = document.getElementById('multiply');
- multiplyNode.addEventListener("click", function(){alert("it works! you clicked on the " + operatorTextNode[1].childNodes[0].data + " operator")});
+ multiplyNode.addEventListener("click", function(){
+   runningTotal = runningTotal + " " + operatorTextNode[1].childNodes[0].data + " ";
+   console.log(runningTotal);
+   alert("it works! you clicked on the " + operatorTextNode[1].childNodes[0].data + " operator")});
   // allOperators.appendChild(operatorStore);
 var minusNode = document.getElementById('minus');
-  minusNode.addEventListener("click", function(){alert("it works! you clicked on the " + operatorTextNode[2].childNodes[0].data + " operator")});
+  minusNode.addEventListener("click", function(){
+    runningTotal = runningTotal + " " + operatorTextNode[2].childNodes[0].data + " ";
+    console.log(runningTotal);
+    alert("it works! you clicked on the " + operatorTextNode[2].childNodes[0].data + " operator")});
   // allOperators.appendChild(operatorStore);
 var plusNode = document.getElementById('plus');
   plusNode.addEventListener("click", function(){
-    runningTotal = runningTotal + operatorTextNode[3].childNodes[0].data;
+    runningTotal = runningTotal + " " + operatorTextNode[3].childNodes[0].data + " ";
     console.log(runningTotal);
     alert("it works! you clicked on the " + operatorTextNode[3].childNodes[0].data + " operator")});
   // allOperators.appendChild(operatorStore);
