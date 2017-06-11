@@ -3,14 +3,25 @@
 
 // get calculator element--outer container
 var calculatorNode = document.getElementById('calculator');
-// get clear, viewport, equal, decimal nodes, all the numbers
-var displayNode = document.getElementById('viewport');
+// get clear, viewport, equal, decimal nodes, numbers, and set up click event
+var displayNode = document.getElementById('display');
+displayNode.style.fontFamily = 'Helvetica, sans-serif';
+displayNode.style.fontWeight = 'lighter';
+displayNode.style.fontSize = '55px';
+// displayNode.style.alignItems = 'flex-end';
+displayNode.style.textAlign = 'right';
+// displayNode.style.paddingRight = '24px';
+// displayNode.style.paddingTop = '10px';
+// displayNode.setAttribute('style', 'fontSize: 55px; textAlign: right; paddingRight: 24px;');
 var clearNode = document.getElementById('clear');
 clearNode.addEventListener("click", function(){alert("it works! You clicked the " + clearNode.attributes[1].nodeValue + " button")});
 var equalNode = document.getElementById('equal');
 equalNode.addEventListener("click", function(){alert("it works! You clicked the " + equalNode.attributes[1].nodeValue +  " sign")});
 var decimalNode = document.getElementById('decimal');
-decimalNode.addEventListener("click", function(){alert("it works! You clicked the " + decimalNode.attributes[1].nodeValue + " symbol")});
+//include in function to turn off eventListener
+decimalNode.addEventListener("click",
+ function(){alert("it works! You clicked the " + decimalNode.attributes[1].nodeValue + " symbol")});
+
 var allNumbers = document.querySelectorAll('.num');
 
 //div with class of operator, returns an array (includes childNode, but need operatorTextNode to access symbol)
@@ -31,25 +42,25 @@ var plusNode = document.getElementById('plus');
   // allOperators.appendChild(operatorStore);
 
   var zeroNode = document.getElementById('0');
-  zeroNode.addEventListener("click", function(){alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)});
+  zeroNode.addEventListener("click",  function(){alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)});
   var oneNode = document.getElementById('1');
-  oneNode.addEventListener("click", function(){alert("it works! you clicked number " + oneNode.attributes[1].nodeValue)});
+  oneNode.addEventListener("click",  function(){alert("it works! you clicked number " + oneNode.attributes[1].nodeValue)});
   var twoNode = document.getElementById('2');
-  twoNode.addEventListener("click", function(){alert("it works! you clicked number " + twoNode.attributes[1].nodeValue)});
+  twoNode.addEventListener("click",  function(){alert("it works! you clicked number " + twoNode.attributes[1].nodeValue)});
   var threeNode = document.getElementById('3');
-  threeNode.addEventListener("click", function(){alert("it works! you clicked number " + threeNode.attributes[1].nodeValue)});
+  threeNode.addEventListener("click",  function(){alert("it works! you clicked number " + threeNode.attributes[1].nodeValue)});
   var fourNode = document.getElementById('4');
-  fourNode.addEventListener("click", function(){alert("it works! you clicked number " + fourNode.attributes[1].nodeValue)});
+  fourNode.addEventListener("click",  function(){alert("it works! you clicked number " + fourNode.attributes[1].nodeValue)});
   var fiveNode = document.getElementById('5');
-  fiveNode.addEventListener("click", function(){alert("it works! you clicked number " + fiveNode.attributes[1].nodeValue)});
+  fiveNode.addEventListener("click", displayNumber);
   var sixNode = document.getElementById('6');
-  sixNode.addEventListener("click", function(){alert("it works! you clicked number " + sixNode.attributes[1].nodeValue)});
+  sixNode.addEventListener("click",  function(){alert("it works! you clicked number " + sixNode.attributes[1].nodeValue)});
   var sevenNode = document.getElementById('7');
-  sevenNode.addEventListener("click", function(){alert("it works! you clicked number " + sevenNode.attributes[1].nodeValue)});
+  sevenNode.addEventListener("click",  function(){alert("it works! you clicked number " + sevenNode.attributes[1].nodeValue)});
   var eightNode = document.getElementById('8');
-  eightNode.addEventListener("click", function(){alert("it works! you clicked number " + eightNode.attributes[1].nodeValue)});
+  eightNode.addEventListener("click",  function(){alert("it works! you clicked number " + eightNode.attributes[1].nodeValue)});
   var nineNode = document.getElementById('9');
-  nineNode.addEventListener("click", function(){alert("it works! you clicked number " + nineNode.attributes[1].nodeValue)});
+  nineNode.addEventListener("click",  function(){alert("it works! you clicked number " + nineNode.attributes[1].nodeValue)});
 
 
 //child of calc-btn, 4 operands (+-*/)
@@ -60,6 +71,14 @@ var operatorTextNode = document.querySelectorAll('.black-txt');
 // console.log(operatorTextNode[2].childNodes[0].data);// subtract (-)
 // console.log(operatorTextNode[3].childNodes[0].data);// add (+)
 
+//for clear and equal
+function changeBackgroundColor() {
+  //change style.backgroundColor = the light green color
+}
+
+function changeTextColor() {
+  //change text color of operands to the white color when moused over
+}
 
 
 
@@ -85,13 +104,17 @@ var numberStorageNode = {};
     numberStorageNode = document.getElementById('3');
 }
 
-function displayNumber(num){
-  for (var i = 0; i < numberStorageNode.length; i++) {
-   if (num == numberStorageNode[i].attributes.value) {
-      console.log('here', num, numberStorageNode[i]);
-    }
-  }
+function displayNumber(){
+  //number shows up in upper lh corner, very small
+
+  // displayNode.setAttribute('style', 'fontSize: 55px; textAlign: right; paddingRight: 24px;');
+  displayNode.textContent = '5';
 }
+  // for (var i = 0; i < numberStorageNode.length; i++) {
+  //  if (num == numberStorageNode[i].attributes.value) {
+  //     console.log('here', num, numberStorageNode[i]);
+  //   }
+  // }
     // numberStorageNode[i].setAttribute('id', allNumbers.id);
     // console.log(numberStorageNode);NOTE might have to go back to numberStorageNode
     // numberStorageNode.addEventListener("click", function showNumber(){
