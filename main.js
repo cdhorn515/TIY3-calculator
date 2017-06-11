@@ -15,14 +15,18 @@ var allNumbers = document.querySelectorAll('.num');
 
 // // this function gets called every time an operator is clicked
 // //accepts number and operator, operator is equal to a number in an object
-function doTheMath(number, operator){
-    if (operatorObj.property[x])
-  for (var i = 0; i<numberStorageNode.length; i++);
-   doMath += numberStorageNode + operatorObj[property];
-   return
-}
-
-
+// function doTheMath(number, operator){
+//     if (operatorObj.property[x])
+//   for (var i = 0; i<numberStorageNode.length; i++);
+//    doMath += numberStorageNode + operatorObj[property];
+//    return
+// }
+//
+// function(){
+//   for (var i = 0; i < allNumbers.length; i++) {
+//
+//   }
+// }
 
 //code to loop over number for value, not needed since allNumbers query returns the childNodes
 // numberStorageNode.setAttribute('value', numberStorageNode.attributes[1].value);
@@ -30,13 +34,30 @@ function doTheMath(number, operator){
 //returns value of each numberStorageNode
 
 //allNumbers returns an array, loop through the array to return the text child allNumbers[index of allNumbers].attributes[1].nodeValue
+
+// NOTE: this works--can click on any number and get message, now need to return correct number clicked on
   for (var i = 0; i < allNumbers.length; i++) {
-    var numberStorageNode = allNumbers[i];
-    numberStorageNode = document.getElementById(i);
-    numberStorageNode.addEventListener("click", function(){alert("it works! You clicked on a number")});
+    // var numberStorageNode = allNumbers[i];
+    allNumbers[i] = document.getElementById(i);
+      //alert message shows whenever you click on a number
+      // numberStorageNode.addEventListener("click", function(){alert("it works! You clicked on a number!")});
+      //does not work--addEventListener not a function --can't do on group?
+      allNumbers[.addEventListener('click', function(){alert("you just clicked a number!")});
+      // numberStorageNode.addEventListener("click", function(){
+
+      //displays 9 for every number clicked
+      //   for (var i = 0; i < allNumbers.length; i ++) {
+      //     if (numberStorageNode.id == i) {
+      //       alert("it works! you clicked on number " + i);
+      //     }
+      //   }
+      // });
+    //alert message shows but allNumbers[i] is undefined
+    // numberStorageNode.addEventListener("click", function(){alert("it works! You clicked on " + allNumbers[i])});
     // returns a list of divs with each number
-    console.log(numberStorageNode);
-  }
+   }
+
+  // console.dir(numberStorageNode);
 //div with class of operator, returns an array (includes childNode, but need operatorTextNode to access symbol)
 var allOperators = document.querySelectorAll('.operator');
 // for (var i = 0; i < allOperators.length; i++) {
