@@ -4,14 +4,64 @@
 // get calculator element--outer container
 var calculatorNode = document.getElementById('calculator');
 // get clear, viewport, equal, decimal nodes, all the numbers
-var clearNode = document.getElementById('clear');
-clearNode.addEventListener("click", function(){alert("it works! You clicked the clear button")});
 var displayNode = document.getElementById('viewport');
+var clearNode = document.getElementById('clear');
+clearNode.addEventListener("click", function(){alert("it works! You clicked the " + clearNode.attributes[1].nodeValue + " button")});
 var equalNode = document.getElementById('equal');
-equalNode.addEventListener("click", function(){alert("it works! You clicked the equal sign")});
+equalNode.addEventListener("click", function(){alert("it works! You clicked the " + equalNode.attributes[1].nodeValue +  " sign")});
 var decimalNode = document.getElementById('decimal');
-decimalNode.addEventListener("click", function(){alert("it works! You clicked the decimal symbol")});
+decimalNode.addEventListener("click", function(){alert("it works! You clicked the " + decimalNode.attributes[1].nodeValue + " symbol")});
 var allNumbers = document.querySelectorAll('.num');
+
+//div with class of operator, returns an array (includes childNode, but need operatorTextNode to access symbol)
+var allOperators = document.querySelectorAll('.operator');
+// for (var i = 0; i < allOperators.length; i++) {
+  // var operatorStore = allOperators[i];
+var divideNode = document.getElementById('divide');
+divideNode.addEventListener("click", function(){alert("it works! you clicked on the " + operatorTextNode[0].childNodes[0].data + " operator")});
+  // allOperators.appendChild(operatorStore);
+var multiplyNode = document.getElementById('multiply');
+ multiplyNode.addEventListener("click", function(){alert("it works! you clicked on the " + operatorTextNode[1].childNodes[0].data + " operator")});
+  // allOperators.appendChild(operatorStore);
+var minusNode = document.getElementById('minus');
+  minusNode.addEventListener("click", function(){alert("it works! you clicked on the " + operatorTextNode[2].childNodes[0].data + " operator")});
+  // allOperators.appendChild(operatorStore);
+var plusNode = document.getElementById('plus');
+  plusNode.addEventListener("click", function(){alert("it works! you clicked on the " + operatorTextNode[3].childNodes[0].data + " operator")});
+  // allOperators.appendChild(operatorStore);
+
+  var zeroNode = document.getElementById('0');
+  zeroNode.addEventListener("click", function(){alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)});
+  var oneNode = document.getElementById('1');
+  oneNode.addEventListener("click", function(){alert("it works! you clicked number " + oneNode.attributes[1].nodeValue)});
+  var twoNode = document.getElementById('2');
+  twoNode.addEventListener("click", function(){alert("it works! you clicked number " + twoNode.attributes[1].nodeValue)});
+  var threeNode = document.getElementById('3');
+  threeNode.addEventListener("click", function(){alert("it works! you clicked number " + threeNode.attributes[1].nodeValue)});
+  var fourNode = document.getElementById('4');
+  fourNode.addEventListener("click", function(){alert("it works! you clicked number " + fourNode.attributes[1].nodeValue)});
+  var fiveNode = document.getElementById('5');
+  fiveNode.addEventListener("click", function(){alert("it works! you clicked number " + fiveNode.attributes[1].nodeValue)});
+  var sixNode = document.getElementById('6');
+  sixNode.addEventListener("click", function(){alert("it works! you clicked number " + sixNode.attributes[1].nodeValue)});
+  var sevenNode = document.getElementById('7');
+  sevenNode.addEventListener("click", function(){alert("it works! you clicked number " + sevenNode.attributes[1].nodeValue)});
+  var eightNode = document.getElementById('8');
+  eightNode.addEventListener("click", function(){alert("it works! you clicked number " + eightNode.attributes[1].nodeValue)});
+  var nineNode = document.getElementById('9');
+  nineNode.addEventListener("click", function(){alert("it works! you clicked number " + nineNode.attributes[1].nodeValue)});
+
+
+//child of calc-btn, 4 operands (+-*/)
+var operatorTextNode = document.querySelectorAll('.black-txt');
+// console.log('here '+ operatorTextNode);
+// console.log(operatorTextNode[0].childNodes[0].data);// divide (/)
+// console.log(operatorTextNode[1].childNodes[0].data);// multiply (*)
+// console.log(operatorTextNode[2].childNodes[0].data);// subtract (-)
+// console.log(operatorTextNode[3].childNodes[0].data);// add (+)
+
+
+
 
 // // this function gets called every time an operator is clicked
 // //accepts number and operator, operator is equal to a number in an object
@@ -56,48 +106,6 @@ function displayNumber(num){
     // console.log(numberStorageNode);
 
     // console.log(numberStorageNode);
-//div with class of operator, returns an array (includes childNode, but need operatorTextNode to access symbol)
-var allOperators = document.querySelectorAll('.operator');
-// for (var i = 0; i < allOperators.length; i++) {
-  // var operatorStore = allOperators[i];
-var divideNode = document.getElementById('divide');
-divideNode.addEventListener("click", function(){alert("it works! you clicked on the /  operator")});
-  // allOperators.appendChild(operatorStore);
-var multiplyNode = document.getElementById('multiply');
- multiplyNode.addEventListener("click", function(){alert("it works! you clicked on the *  operator")});
-  // allOperators.appendChild(operatorStore);
-var minusNode = document.getElementById('minus');
-  minusNode.addEventListener("click", function(){alert("it works! you clicked on the - operator")});
-  // allOperators.appendChild(operatorStore);
-var plusNode = document.getElementById('plus');
-  plusNode.addEventListener("click", function(){alert("it works! you clicked on the +  operator")});
-  // allOperators.appendChild(operatorStore);
-
-  var zeroNode = document.getElementById('0');
-  zeroNode.addEventListener("click", function(){alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)})
-  var oneNode = document.getElementById('1');
-  oneNode.addEventListener("click", function(){alert("it works! you clicked number " + oneNode.attributes[1].nodeValue)})
-  var twoNode = document.getElementById('2');
-  twoNode.addEventListener("click", function(){alert("it works! you clicked number " + twoNode.attributes[1].nodeValue)})
-  var threeNode = document.getElementById('3');
-  threeNode.addEventListener("click", function(){alert("it works! you clicked number " + threeNode.attributes[1].nodeValue)})
-  var fourNode = document.getElementById('4');
-  fourNode.addEventListener("click", function(){alert("it works! you clicked number " + fourNode.attributes[1].nodeValue)})
-  var fiveNode = document.getElementById('5');
-  fiveNode.addEventListener("click", function(){alert("it works! you clicked number " + fiveNode.attributes[1].nodeValue)})
-  var sixNode = document.getElementById('6');
-  sixNode.addEventListener("click", function(){alert("it works! you clicked number " + sixNode.attributes[1].nodeValue)})
-  var sevenNode = document.getElementById('7');
-  sevenNode.addEventListener("click", function(){alert("it works! you clicked number " + sevenNode.attributes[1].nodeValue)})
-  var eightNode = document.getElementById('8');
-  eightNode.addEventListener("click", function(){alert("it works! you clicked number " + eightNode.attributes[1].nodeValue)})
-  var nineNode = document.getElementById('9');
-  nineNode.addEventListener("click", function(){alert("it works! you clicked number " + nineNode.attributes[1].nodeValue)})
-
-
-
-//child of calc-btn, 4 operands (+-*/)
-// var operatorTextNode = document.querySelectorAll('.black-txt');
 
 // operatorStore.addEventListener("click", function(){alert("it works! you clicked on an operator")});
 
