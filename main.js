@@ -24,32 +24,35 @@ clearNode.addEventListener("click", function() {
 });
 
 var equalNode = document.getElementById('equal');
+
 equalNode.addEventListener("click", function() {
   var totalArray = runningTotal.split(' ');
-  for (i = 0; i < totalArray.length; i++) {
-    if (i % 2 === 0) {
-      var numToInt = parseFloat(totalArray[i]);
-      // if (sumTotal === 0){
-      //   sumTotal = numToInt;
-        console.log("beginning total= " + sumTotal);
-      
-      console.log(numToInt);
-      console.log(typeof(numToInt));
-      console.log("sum so far = " + sumTotal);
-      // return numToInt;
-    } else if (totalArray[i] === '/') {
-      sumTotal = sumTotal / numToInt;
-    } else if (totalArray[i] === '*') {
-      sumTotal = sumTotal * numToInt;
-    } else if (totalArray[i] === '-') {
-      sumTotal = sumTotal - numToInt;
-    } else if (totalArray[i] === '+') {
-      sumTotal = sumTotal + numToInt;
+  for (var i = 0; i <= totalArray.length; i++) {
+    if (i === 0) {
+      sumTotal = parseFloat(totalArray[i]);
+      console.log("beginning total= " + sumTotal);
     }
-  }
-  console.log('here1 ' + totalArray);
-  console.log('here2 ' + sumTotal);
-  console.log("last here " + typeof(sumTotal));
+     else if (i % 2 != 0 && totalArray[i] === '/') {
+       sumTotal = sumTotal / parseFloat(totalArray[i+1]);
+       console.log(sumTotal);
+     }
+     else if (i % 2 != 0 && totalArray[i] === '*') {
+       sumTotal = sumTotal * parseFloat(totalArray[i+1]);
+       console.log(sumTotal);
+     }
+     else if (i % 2 != 0 && totalArray[i] === '-') {
+       sumTotal = sumTotal - parseFloat(totalArray[i+1]);
+       console.log(sumTotal);
+     }
+     else if (i % 2 != 0 && totalArray[i] === '+') {
+       sumTotal = sumTotal + parseFloat(totalArray[i+1]);
+       console.log(sumTotal);
+     }
+    }
+
+  // console.log('here1 ' + totalArray);
+  // console.log('here2 ' + sumTotal);
+  // console.log("last here " + typeof(sumTotal));
   alert("it works! You clicked the " + equalNode.attributes[1].nodeValue + " sign")
 });
 
