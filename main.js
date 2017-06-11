@@ -5,14 +5,7 @@
 var calculatorNode = document.getElementById('calculator');
 // get clear, viewport, equal, decimal nodes, numbers, and set up click event
 var displayNode = document.getElementById('display');
-displayNode.style.fontFamily = 'Helvetica, sans-serif';
-displayNode.style.fontWeight = 'lighter';
-displayNode.style.fontSize = '55px';
-// displayNode.style.alignItems = 'flex-end';
-displayNode.style.textAlign = 'right';
-// displayNode.style.paddingRight = '24px';
-// displayNode.style.paddingTop = '10px';
-// displayNode.setAttribute('style', 'fontSize: 55px; textAlign: right; paddingRight: 24px;');
+displayNode.setAttribute('style', 'fontFamily: Helvetica, sans-serif; fontWeight: lighter; fontSize: 55px; textAlign: right;');
 var clearNode = document.getElementById('clear');
 clearNode.addEventListener("click", function(){alert("it works! You clicked the " + clearNode.attributes[1].nodeValue + " button")});
 var equalNode = document.getElementById('equal');
