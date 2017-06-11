@@ -2,7 +2,7 @@
 
 var runningTotal = "";
 var sumTotal = 0;
-
+// console.log("here " + typeof(sumTotal));
 function total() {
   return runningTotal = runningTotal + displayNode.textContent;
 }
@@ -28,24 +28,28 @@ equalNode.addEventListener("click", function() {
   var totalArray = runningTotal.split(' ');
   for (i = 0; i < totalArray.length; i++) {
     if (i % 2 === 0) {
-      parseFloat(totalArray[i]);
-      console.log(totalArray);
-      sumTotal = sumTotal + totalArray[i];
-    } else sumTotal = sumTotal + totalArray[i];
-
-    // } else if (totalArray[i] == /) {
-    //   totalArray[i] = /;
-    // } else if (totalArray[i] == *) {
-    //   totalArray[i] = *;
-    // } else if (totalArray[i] == -) {
-    //   totalArray[i] = -;
-    // } else if (totalArray[i] == +) {
-    //   totalArray[i] = +;
-    // }
-    // sumTotal = sumTotal + totalArray[i];
+      var numToInt = parseFloat(totalArray[i]);
+      // if (sumTotal === 0){
+      //   sumTotal = numToInt;
+        console.log("beginning total= " + sumTotal);
+      
+      console.log(numToInt);
+      console.log(typeof(numToInt));
+      console.log("sum so far = " + sumTotal);
+      // return numToInt;
+    } else if (totalArray[i] === '/') {
+      sumTotal = sumTotal / numToInt;
+    } else if (totalArray[i] === '*') {
+      sumTotal = sumTotal * numToInt;
+    } else if (totalArray[i] === '-') {
+      sumTotal = sumTotal - numToInt;
+    } else if (totalArray[i] === '+') {
+      sumTotal = sumTotal + numToInt;
+    }
   }
-  console.log('here' + totalArray);
-  console.log('here' + sumTotal);
+  console.log('here1 ' + totalArray);
+  console.log('here2 ' + sumTotal);
+  console.log("last here " + typeof(sumTotal));
   alert("it works! You clicked the " + equalNode.attributes[1].nodeValue + " sign")
 });
 
