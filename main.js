@@ -1,4 +1,7 @@
-// "use strict";
+(function(){
+
+
+"use strict";
 
 var runningTotal = "";
 var sumTotal = 0;
@@ -238,3 +241,6 @@ function changeBackgroundColor() {
 //   //number shows up in upper lh corner, very small
 //   displayNode.textContent = displayNode.textContent + id.value;
 // }
+
+
+})();
