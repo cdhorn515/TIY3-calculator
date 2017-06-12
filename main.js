@@ -27,6 +27,7 @@ var clearNode = document.getElementById('clear');
 clearNode.addEventListener("click", function() {
   runningTotal = "";
   sumTotal = 0;
+  hasDecimalBeenClicked = 0;
   displayNode.textContent = "";
   // console.log('runningTotal is now ' + runningTotal);
   // alert("it works! You clicked the " + clearNode.attributes[1].nodeValue + " button")
@@ -43,15 +44,25 @@ equalNode.addEventListener("click", sumOfNumbers);
 
 
 var decimalNode = document.getElementById('.');
+decimalNode.setAttribute('flag', true);
+var hasDecimalBeenClicked = 0;
 //include in function to turn off eventListener
 //research at stackoverflow for info on turing click off: https://stackoverflow.com/questions/26617719/turn-off-event-listener-after-triggered-once
 decimalNode.addEventListener("click",
   function() {
     // decimalNode.removeEventListener('click', removeClick);
-      runningTotal = runningTotal + '.';
-      displayNode.textContent = displayNode.textContent + '.';
-      // console.log(runningTotal);
+        if (hasDecimalBeenClicked < 1) {
+        runningTotal = runningTotal + '.';
+        displayNode.textContent = displayNode.textContent + '.';
+        hasDecimalBeenClicked++;
+      } else {
+        return;
+      }
     });
+
+
+      // console.log(runningTotal);
+    // });
     //returns undefined.
     //  var runningTotal = runningTotal + decimalNode.attributes[1].nodeValue;
 
