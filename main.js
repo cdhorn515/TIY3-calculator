@@ -44,7 +44,7 @@ equalNode.addEventListener("click", sumOfNumbers);
 
 
 var decimalNode = document.getElementById('.');
-decimalNode.setAttribute('flag', true);
+// decimalNode.setAttribute('flag', true);
 var hasDecimalBeenClicked = 0;
 //include in function to turn off eventListener
 //research at stackoverflow for info on turing click off: https://stackoverflow.com/questions/26617719/turn-off-event-listener-after-triggered-once
