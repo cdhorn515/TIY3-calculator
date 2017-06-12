@@ -76,46 +76,37 @@ var allOperators = document.querySelectorAll('.operator');
 // for (var i = 0; i < allOperators.length; i++) {
 // var operatorStore = allOperators[i];
 var divideNode = document.getElementById('divide');
-  // divideNode.addEventListener('mouseover', function(){
-  //   divideNode.setAttribute('style', 'color: #91C988;');
-  // });
   divideNode.addEventListener("click", function() {
   displayNode.textContent = runningTotal + '/';
   // displayNode.textContent = displayNode.textContent + '/';
   runningTotal = runningTotal + " " + operatorTextNode[0].childNodes[0].data + " ";
+  hasDecimalBeenClicked = 0;
   // console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[0].childNodes[0].data + " operator")
 });
-// allOperators.appendChild(operatorStore);
 var multiplyNode = document.getElementById('multiply');
-  // multiplyNode.addEventListener('mouseover', function(){
-  //   minusNode.setAttribute('style', 'color: #91C988;');
-  // });
   multiplyNode.addEventListener("click", function() {
   displayNode.textContent = runningTotal + '*';
   runningTotal = runningTotal + " " + operatorTextNode[1].childNodes[0].data + " ";
+  hasDecimalBeenClicked = 0;
   // console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[1].childNodes[0].data + " operator")
 });
 // allOperators.appendChild(operatorStore);
 var minusNode = document.getElementById('minus');
-  // minusNode.addEventListener('mouseover', function(){
-  //   minusNode.setAttribute('style', 'color: #91C988;');
-  // });
   minusNode.addEventListener("click", function() {
   displayNode.textContent = runningTotal + '-';
   runningTotal = runningTotal + " " + operatorTextNode[2].childNodes[0].data + " ";
+  hasDecimalBeenClicked = 0;
   // console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[2].childNodes[0].data + " operator")
 });
 // allOperators.appendChild(operatorStore);
 var plusNode = document.getElementById('plus');
-// plusNode.addEventListener('mouseover', function(){
-//   plusNode.setAttribute('style', 'color: #91C988;');
-// });
 plusNode.addEventListener("click", function() {
   displayNode.textContent = runningTotal + '+';
   runningTotal = runningTotal + " " + operatorTextNode[3].childNodes[0].data + " ";
+  hasDecimalBeenClicked = 0;
   // console.log(runningTotal);
   // alert("it works! you clicked on the " + operatorTextNode[3].childNodes[0].data + " operator")
 });
@@ -226,6 +217,7 @@ function sumOfNumbers() {
       //  console.log(sumTotal);
      }
    } displayNode.textContent = sumTotal;
+     hasDecimalBeenClicked = 0;
     // alert("it works! You clicked the " + equalNode.attributes[1].nodeValue + " sign");
   }
 //child of calc-btn, 4 operands (+-*/)
