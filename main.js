@@ -8,7 +8,8 @@ function addToDisplay(){
      runningTotal = runningTotal + " " + text + " ";
     //  return decimalClicks = 0;
    } else runningTotal = runningTotal + text;
-   return runningTotal;
+    //  return runningTotal;
+    displayNode.textContent = runningTotal;
 }
 
 function total() {
@@ -37,12 +38,13 @@ for (var i = 0; i < allOperands.length; i++) {
       // hasDecimalBeenClicked = 0;
       return;
     } else if (event.target.textContent === '.') {
-      if (decimalClicks < 1) {
+      if (decimalClicks === 1) {
         // addToDisplay();
         // hasDecimalBeenClicked++;
-        // return;
+        return;
       }
     } else if (event.target.textContent === '=') {
+
       return sumOfNumbers();
     }
     hasDecimalBeenClicked();
@@ -68,14 +70,17 @@ function sumOfNumbers() {
        if (i % 2 != 0 && totalArray[i] === '+') {
        sumTotal = sumTotal + parseFloat(totalArray[i+1]);
      }
-   } hasDecimalBeenClicked();
+   } runningTotal = "";
+     hasDecimalBeenClicked();
      displayNode.textContent = sumTotal;
   }
 
 function hasDecimalBeenClicked(){
-  if (event.target.textContent === '.' && decimalClicks === 0) {
-    return decimalClicks = 1;
-  } else return decimalClicks = 0;
+  decimalClicks = 0;
+  if (event.target.textContent === '.' && decimalClicks === 1) {
+    return;
+  } else return decimalClicks++;
+
 }
 
   var totalArray;
