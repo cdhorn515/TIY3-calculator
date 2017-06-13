@@ -1,7 +1,12 @@
-// (function(){
-//
-//
-// "use strict";
+(function(){
+
+
+"use strict";
+var totalArray;
+var runningTotal = "";
+var sumTotal;
+var hasDecimalBeenClicked = 0;
+var calculatorNode = document.getElementById('calculator');
 
 function addToDisplay(){
    var text = event.target.textContent;
@@ -38,11 +43,16 @@ for (var i = 0; i < allOperands.length; i++) {
       displayNode.textContent = displayNode.textContent + "*";
       hasDecimalBeenClicked = 0;
       return;
+      // ********************************
+    } else if (event.target.textContent === "/" || event.target.textContent === "+" || event.target.textContent === "-") {
+      hasDecimalBeenClicked = 0;
+    // *********************************
     } else if (event.target.textContent === '.') {
       if (hasDecimalBeenClicked < 1) {
         addToDisplay();
         hasDecimalBeenClicked++;
-      } return;
+        return;
+      }
     } else if (event.target.textContent === '=') {
     return sumOfNumbers();
     }
@@ -58,25 +68,25 @@ function sumOfNumbers() {
     } else
       if (i % 2 != 0 && totalArray[i] === '/') {
        sumTotal = sumTotal / parseFloat(totalArray[i+1]);
+       hasDecimalBeenClicked = 0;
     } else
       if (i % 2 != 0 && totalArray[i] === '*') {
        sumTotal = sumTotal * parseFloat(totalArray[i+1]);
+       hasDecimalBeenClicked = 0;
     } else
       if (i % 2 != 0 && totalArray[i] === '-') {
        sumTotal = sumTotal - parseFloat(totalArray[i+1]);
+       hasDecimalBeenClicked = 0;
      } else
        if (i % 2 != 0 && totalArray[i] === '+') {
        sumTotal = sumTotal + parseFloat(totalArray[i+1]);
+       hasDecimalBeenClicked = 0;
      }
    } hasDecimalBeenClicked = 0;
      displayNode.textContent = sumTotal;
   }
 
-  var totalArray;
-  var runningTotal = "";
-  var sumTotal;
-  var hasDecimalBeenClicked;
-  var calculatorNode = document.getElementById('calculator');
+
 
 
 var displayNode = document.getElementById('display');
@@ -132,4 +142,4 @@ displayNode.setAttribute('style', 'fontFamily: Helvetica, sans-serif; fontWeight
 //
 //   }
 
-// })();
+})();
