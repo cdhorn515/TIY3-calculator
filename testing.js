@@ -1,32 +1,43 @@
-
-
-var operands = ["*", "/", "-", "+"];
-runningTotal = 20;
-y = 2;
-if (operands[1] == '/') {
-  runningTotal = runningTotal / y;
-  console.log(runningTotal);
-}
-
-
-function NumberNode(id){
-  this.id = id;
-}
-
-var allNumbersNode = {};
-for (var i = 0; i < numberStorageNode.length; i++) {
-
-
-  var idNode = numberStorageNode.attributes[1].nodeValue
-
-   allNumbersNode.appendChild(idNode);
-  console.log(allNumbersNode);
-  allNumbersNode.addEventListener("click", function() {"it works! you clicked number " + allNumbers.attributes[1].nodeValue;
-
-  })
- }
-
- (){alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)});
+//
+//
+// var operands = ["*", "/", "-", "+"];
+// runningTotal = 20;
+// y = 2;
+// if (operands[1] == '/') {
+//   runningTotal = runningTotal / y;
+//   console.log(runningTotal);
+// }
+//
+//
+// function NumberNode(id){
+//   this.id = id;
+// }
+//
+// var allNumbersNode = {};
+// for (var i = 0; i < numberStorageNode.length; i++) {
+//
+//
+//   var idNode = numberStorageNode.attributes[1].nodeValue
+//
+//    allNumbersNode.appendChild(idNode);
+//   console.log(allNumbersNode);
+//   allNumbersNode.addEventListener("click", function() {"it works! you clicked number " + allNumbers.attributes[1].nodeValue;
+//
+//   })
+//  }
+var displayNode = document.getElementById('display');
+var runningTotal = "";
+var allNumbers = document.querySelectorAll('.number');
+  for (var i = 0; i < allNumbers.length; i++) {
+  allNumbers[i].addEventListener('click', function(click){
+     var text = event.target.textContent;
+     displayNode.textContent = displayNode.textContent + text;
+    runningTotal = runningTotal + event.target.textContent;
+    alert("it works! you clicked number " + event.target.textContent);
+  });
+console.log(runningTotal);
+  }
+ // (){alert("it works! you clicked number " + zeroNode.attributes[1].nodeValue)});
 
 
  // NOTE Taken out of code, don't think it affects in any way
