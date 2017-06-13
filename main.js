@@ -1,7 +1,5 @@
-// (function(){
-//
-//
-// "use strict";
+(function(){
+ "use strict";
 
 function addToDisplay(){
    var text = event.target.textContent;
@@ -87,49 +85,4 @@ if (runningTotal.length > 7) {
 displayNode.setAttribute('style', 'fontFamily: Helvetica, sans-serif; fontWeight: lighter; fontSize: 55px; textAlign: right;');
 }
 
-// when equal is clicked add all numbers together and display total
-
-
-
-
-
-
-
-
-    // alert("it works! You clicked the " + equalNode.attributes[1].nodeValue + " sign");
-
-//child of calc-btn, 4 operands (+-*/)
-// var operatorTextNode = document.querySelectorAll('.black-txt');
-// console.log('here '+ operatorTextNode);
-// console.log(operatorTextNode[0].childNodes[0].data);// divide (/)
-// console.log(operatorTextNode[1].childNodes[0].data);// multiply (*)
-// console.log(operatorTextNode[2].childNodes[0].data);// subtract (-)
-// console.log(operatorTextNode[3].childNodes[0].data);// add (+)
-
-//for clear and equal FIXME for loop?
-// function changeBackgroundColor() {
-
-  //change style.backgroundColor = the light green color
-// }
-// function decimalClicked(){
-//   if hasDecimalBeenClicked === 0;
-//   hasDecimalBeenClicked++;
-//  } return;
-
-
-
-
-// function displayNumber(id) {
-//   //number shows up in upper lh corner, very small
-//   displayNode.textContent = displayNode.textContent + id.value;
-// }
-// var allNumbers = document.querySelectorAll('.number');
-//   for (var i = 0; i < allNumbers.length; i++) {
-//   allNumbers[i].addEventListener('click', fucntion(click){
-//     displayNode = displayNode + displayNode.event.target.textContent;
-//     runningTotal = runningTotal + allNumbers[i].event.target.TextContent;
-//   });
-//
-//   }
-
-// })();
+})();
