@@ -7,7 +7,8 @@ function addToDisplay(){
    var text = event.target.textContent;
    displayNode.textContent = displayNode.textContent + text;
    if (text === '/' || text === '*' || text === '-' || text === '+'){
-     runningTotal = runningTotal + text + " ";
+     runningTotal = runningTotal + " " + text + " ";
+
    } else runningTotal = runningTotal + text;
    return runningTotal;
 }
@@ -43,8 +44,7 @@ for (var i = 0; i < allOperands.length; i++) {
         hasDecimalBeenClicked++;
       } return;
     } else if (event.target.textContent === '=') {
-      sumOfNumbers();
-      return;
+    return sumOfNumbers();
     }
      addToDisplay();
   });
@@ -59,7 +59,7 @@ function sumOfNumbers() {
       if (i % 2 != 0 && totalArray[i] === '/') {
        sumTotal = sumTotal / parseFloat(totalArray[i+1]);
     } else
-      if (i % 2 != 0 && totalArray[i] === 'X') {
+      if (i % 2 != 0 && totalArray[i] === '*') {
        sumTotal = sumTotal * parseFloat(totalArray[i+1]);
     } else
       if (i % 2 != 0 && totalArray[i] === '-') {
@@ -74,8 +74,8 @@ function sumOfNumbers() {
 
   var totalArray;
   var runningTotal = "";
-  var sumTotal = 0;
-  var hasDecimalBeenClicked = 0;
+  var sumTotal;
+  var hasDecimalBeenClicked;
   var calculatorNode = document.getElementById('calculator');
 
 
