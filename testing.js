@@ -128,3 +128,80 @@ console.log(runningTotal);
 
  // DOM elements
  //get all num buttons--returns an array with div, id, and class names array returns order of [7,8,9,4,5,6,1,2,3,0]
+ // FIXME set style for display so numbers added will show correct size and place
+ // if (runningTotal.length > 7) {
+ //   displayNode.setAttribute('style', 'fontSize: 40px;');
+ // } else {
+ // displayNode.setAttribute('style', 'fontFamily: Helvetica, sans-serif; fontWeight: lighter; fontSize: 55px; textAlign: right;');
+ // }
+
+ // when equal is clicked add all numbers together and display total
+
+
+
+
+
+
+
+
+     // alert("it works! You clicked the " + equalNode.attributes[1].nodeValue + " sign");
+
+ //child of calc-btn, 4 operands (+-*/)
+ // var operatorTextNode = document.querySelectorAll('.black-txt');
+ // console.log('here '+ operatorTextNode);
+ // console.log(operatorTextNode[0].childNodes[0].data);// divide (/)
+ // console.log(operatorTextNode[1].childNodes[0].data);// multiply (*)
+ // console.log(operatorTextNode[2].childNodes[0].data);// subtract (-)
+ // console.log(operatorTextNode[3].childNodes[0].data);// add (+)
+
+ //for clear and equal FIXME for loop?
+ // function changeBackgroundColor() {
+
+   //change style.backgroundColor = the light green color
+ // }
+ // function decimalClicked(){
+ //   if hasDecimalBeenClicked === 0;
+ //   hasDecimalBeenClicked++;
+ //  } return;
+
+
+
+
+ // function displayNumber(id) {
+ //   //number shows up in upper lh corner, very small
+ //   displayNode.textContent = displayNode.textContent + id.value;
+ // }
+ // var allNumbers = document.querySelectorAll('.number');
+ //   for (var i = 0; i < allNumbers.length; i++) {
+ //   allNumbers[i].addEventListener('click', fucntion(click){
+ //     displayNode = displayNode + displayNode.event.target.textContent;
+ //     runningTotal = runningTotal + allNumbers[i].event.target.TextContent;
+ //   });
+ //
+ //   }
+
+// math example from Jennifer from Mady
+//  var operations = [‘5’, ‘-’, ‘1’, ‘+’, ‘5’, ‘x’, ‘10’];
+//
+// function doMath(){
+// var accumulator = parseInt(operations[0]);
+//
+// for(var i=1; i < operations.length-1; i++){
+// switch (operations[i]) {
+// case ‘-’:
+// accumulator = accumulator - parseInt(operations[i+1]);
+// break;
+//
+// case ‘+’:
+// accumulator = accumulator + parseInt(operations[i+1]);
+// break;
+//
+// case ‘x’:
+// accumulator = accumulator * parseInt(operations[i+1]);
+// break;
+// }
+// }
+// console.log(accumulator);
+// }
+//
+// doMath();

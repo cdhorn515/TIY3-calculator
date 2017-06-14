@@ -9,7 +9,8 @@ background-color: orange;
 .numberViewer{
   margin: 0 auto;
   margin-top: 100px;
-  width: 328px;
+  max-width: 328px;
+  width: 100%;
   /*width: 22.6%*/
   height: 406px;
   display: flex;
