@@ -12,13 +12,20 @@
 
   function addToDisplay() {
     var text = event.target.textContent;
-    if (displayNode.textContent.length === 7) {
+    if (displayNode.textContent.length === 6) {
       return runningTotal;
     }
-    displayNode.textContent = displayNode.textContent + text;
-    if (text === '/' || text === '*' || text === '-' || text === '+') {
+    // displayNode.textContent = displayNode.textContent + text;
+    if (displayNode.textContent === "" && text === '-') {
+      displayNode.textContent = displayNode.textContent + text;
+      runningTotal = runningTotal + text;
+    } else if (text === '/' || text === '*' || text === '-' || text === '+') {
+      displayNode.textContent = "";
       runningTotal = runningTotal + " " + text + " ";
-    } else runningTotal = runningTotal + text;
+    } else {
+      runningTotal = runningTotal + text;
+    displayNode.textContent = displayNode.textContent + text;
+}
     return runningTotal;
   }
 
@@ -40,11 +47,14 @@
         return isDecimalClicked = false;
       } else if (event.target.textContent === 'X') {
         runningTotal = runningTotal + " * ";
-        displayNode.textContent = displayNode.textContent + "*";
+        // displayNode.textContent = displayNode.textContent + "*";
+        displayNode.textContent = "";
+
         isDecimalClicked = false;
         return;
         // ********************************
       } else if (event.target.textContent === "/" || event.target.textContent === "+" || event.target.textContent === "-") {
+
         isDecimalClicked = false;
         // *********************************
       } else if (event.target.textContent === '.') {
@@ -53,6 +63,7 @@
         } else {
           addToDisplay();
           return isDecimalClicked = true;
+
         }
       } else if (event.target.textContent === '=') {
         return sumOfNumbers();
@@ -88,6 +99,10 @@
     isDecimalClicked = false;
     var limitDecimal = Math.round(sumTotal * 100) / 100;
     displayNode.textContent = limitDecimal;
+    if (displayNode.textContent.length > 7) {
+      displayNode.textContent = "OOR";
+      return displayNode.textContent;
+    }
     return displayNode.textContent;
   }
 
