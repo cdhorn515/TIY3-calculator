@@ -11,22 +11,15 @@
 
 
   function addToDisplay() {
-    if (runningTotal.length >= 7) {
-      displayNode.style = 'fontSize: 40px;';
-    } else {
-      displayNode.setAttribute('style', 'fontFamily: Helvetica, sans-serif; fontWeight: lighter; fontSize: 55px; textAlign: right;');
-    }
     var text = event.target.textContent;
+    if (displayNode.textContent.length === 7) {
+      return runningTotal;
+    }
     displayNode.textContent = displayNode.textContent + text;
     if (text === '/' || text === '*' || text === '-' || text === '+') {
       runningTotal = runningTotal + " " + text + " ";
     } else runningTotal = runningTotal + text;
-
     return runningTotal;
-  }
-
-  function total() {
-    return runningTotal = runningTotal + displayNode.textContent;
   }
 
   //gets all numbers by class, sets up click event, adds to runningTotal and to display
@@ -45,10 +38,8 @@
         runningTotal = "";
         displayNode.textContent = "";
         return isDecimalClicked = false;
-        // return;
       } else if (event.target.textContent === 'X') {
         runningTotal = runningTotal + " * ";
-        // text = "*";
         displayNode.textContent = displayNode.textContent + "*";
         isDecimalClicked = false;
         return;
@@ -62,7 +53,6 @@
         } else {
           addToDisplay();
           return isDecimalClicked = true;
-          // return;
         }
       } else if (event.target.textContent === '=') {
         return sumOfNumbers();
@@ -96,16 +86,9 @@
     }
 
     isDecimalClicked = false;
-    displayNode.textContent = sumTotal;
+    var limitDecimal = Math.round(sumTotal * 100) / 100;
+    displayNode.textContent = limitDecimal;
+    return displayNode.textContent;
   }
-
-  // for (var j = 0; j < sumTotal.length; j++) {
-  //    console.log(sumTotal);
-  //   if (sumTotal.charAt(j) === 46) {
-  //     console.log(sumTotal.charAt(j));
-  //     sumTotal = sumTotal.toFixed(2);
-  //   }
-  // }
-
 
 })();

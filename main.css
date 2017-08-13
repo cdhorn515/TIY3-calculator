@@ -5,13 +5,16 @@
 body{
 background-color: #FCFCEE;
 }
+
+.calc-container{
+  max-width: 328px;
+  margin: 0 auto;
+}
 /*-calc flex container-*/
 .numberViewer{
   margin: 0 auto;
   margin-top: 100px;
-  max-width: 328px;
   width: 100%;
-  /*width: 22.6%*/
   height: 406px;
   display: flex;
   justify-content: flex-start;
@@ -66,5 +69,4 @@ background-color: #FCFCEE;
 
 .changeTxt:hover{
   color: #FFF;
-  /*color: #91C988;*/
 }
