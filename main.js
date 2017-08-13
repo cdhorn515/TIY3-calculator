@@ -15,7 +15,6 @@
     if (displayNode.textContent.length === 6) {
       return runningTotal;
     }
-    // displayNode.textContent = displayNode.textContent + text;
     if (displayNode.textContent === "" && text === '-') {
       displayNode.textContent = displayNode.textContent + text;
       runningTotal = runningTotal + text;
