@@ -23,8 +23,8 @@
       runningTotal = runningTotal + " " + text + " ";
     } else {
       runningTotal = runningTotal + text;
-    displayNode.textContent = displayNode.textContent + text;
-}
+      displayNode.textContent = displayNode.textContent + text;
+    }
     return runningTotal;
   }
 
@@ -46,9 +46,7 @@
         return isDecimalClicked = false;
       } else if (event.target.textContent === 'X') {
         runningTotal = runningTotal + " * ";
-        // displayNode.textContent = displayNode.textContent + "*";
         displayNode.textContent = "";
-
         isDecimalClicked = false;
         return;
         // ********************************
@@ -62,7 +60,6 @@
         } else {
           addToDisplay();
           return isDecimalClicked = true;
-
         }
       } else if (event.target.textContent === '=') {
         return sumOfNumbers();
@@ -77,19 +74,19 @@
       if (i === 0) {
         sumTotal = parseFloat(totalArray[i]);
       } else
-      if (i % 2 != 0 && totalArray[i] === '/') {
+      if (i % 2 !== 0 && totalArray[i] === '/') {
         sumTotal = sumTotal / parseFloat(totalArray[i + 1]);
         isDecimalClicked = false;
       } else
-      if (i % 2 != 0 && totalArray[i] === '*') {
+      if (i % 2 !== 0 && totalArray[i] === '*') {
         sumTotal = sumTotal * parseFloat(totalArray[i + 1]);
         isDecimalClicked = false;
       } else
-      if (i % 2 != 0 && totalArray[i] === '-') {
+      if (i % 2 !== 0 && totalArray[i] === '-') {
         sumTotal = sumTotal - parseFloat(totalArray[i + 1]);
         isDecimalClicked = false;
       } else
-      if (i % 2 != 0 && totalArray[i] === '+') {
+      if (i % 2 !== 0 && totalArray[i] === '+') {
         sumTotal = sumTotal + parseFloat(totalArray[i + 1]);
         isDecimalClicked = false;
       }
@@ -99,7 +96,8 @@
     var limitDecimal = Math.round(sumTotal * 100) / 100;
     displayNode.textContent = limitDecimal;
     if (displayNode.textContent.length > 7) {
-      displayNode.textContent = "OOR";
+      var scientificEq = limitDecimal.toExponential(1);
+      displayNode.textContent = scientificEq;
       return displayNode.textContent;
     }
     return displayNode.textContent;
